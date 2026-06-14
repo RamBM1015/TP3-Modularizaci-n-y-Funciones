@@ -1,0 +1,62 @@
+# logica_mision.py
+
+def calcular_combustible(distancia, consumo_por_km):
+    """
+    Calcula el combustible necesario.
+    Retorna distancia * consumo_por_km.
+    """
+    return distancia * consumo_por_km
+
+
+def configurar_nave(nombre, modelo="Explorador", estado="Óptimo"):
+    """
+    Configura la nave con nombre, modelo y estado.
+    Usa valores por defecto si no se pasan.
+    """
+    print(f"Nave configurada: Nombre={nombre}, Modelo={modelo}, Estado={estado}")
+
+
+def obtener_coordenadas():
+    """
+    Retorna una tupla con coordenadas (x, y, z).
+    """
+    x, y, z = 120, 45, 300  # valores de ejemplo
+    return (x, y, z)
+
+
+def registrar_tripulantes(*args):
+    """
+    Registra una cantidad variable de tripulantes.
+    """
+    print("Tripulantes a bordo:")
+    for tripulante in args:
+        print(f"- {tripulante}")
+
+# main.py
+from logica_mision import (
+    calcular_combustible,
+    configurar_nave,
+    obtener_coordenadas,
+    registrar_tripulantes
+)
+
+if __name__ == "__main__":
+    # Configuración de la nave usando argumentos por nombre en distinto orden
+    configurar_nave(estado="Listo para despegar", nombre="Odisea")
+
+    # Calcular combustible
+    distancia = 150
+    consumo = 2
+    print(f"Combustible necesario: {calcular_combustible(distancia, consumo)} litros")
+
+    # Obtener coordenadas y desempaquetar
+    x, y, z = obtener_coordenadas()
+    print(f"Coordenadas actuales -> X: {x}, Y: {y}, Z: {z}")
+
+    # Registrar tripulantes
+    registrar_tripulantes("Alice", "Bob", "Carlos", "Diana")
+
+
+"""
+hecho con ia, perdoneme profe, no tenia muchas ganas ;(
+"""
